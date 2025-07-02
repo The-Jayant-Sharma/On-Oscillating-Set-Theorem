@@ -1,0 +1,89 @@
+\documentclass[9pt]{amsart}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs, graphicx, tikz}
+\usepackage[left=3cm, right=3cm, bottom=3.4cm]{geometry}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+% Custom Operators
+\DeclareMathOperator{\del}{Del}
+\DeclareMathOperator{\ind}{Ind}
+
+% Custom qed symbol
+\renewcommand{\qedsymbol}{\emph{(end of proof)}}
+
+% Theorem Styles
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\thetheorem}{\Roman{theorem}}
+
+\newtheorem{proposition}{Proposition}
+\renewcommand{\theproposition}{\Roman{proposition}}
+
+\newtheorem{result}{Result}
+\renewcommand{\theresult}{\Roman{result}}
+
+\newtheorem{lemma}{Lemma}
+\renewcommand{\thelemma}{\Roman{lemma}}
+
+\newtheorem{conjecture}{Conjecture}
+\renewcommand{\theconjecture}{\Roman{conjecture}}
+
+% Title and Author
+\title{\textbf{On the Oscillating Set Theorem for Convergence and Divergence}}
+\author{Jayant Sharma}
+\date{\today}
+
+% Fancy Header
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\emph{On the Oscillating Set Theorem for Convergence and Divergence, Jayant Sharma}}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Let $U$ be an increasing infinite set. A subset $A \subseteq U$ is called an \emph{oscillating subset} of $U$ if the following condition holds:
+\[
+\max \left( \del\left( \ind(U, A) \right) \right) < \infty
+\]
+Here, the operator $\ind(U, A)$ returns the set of indices corresponding to the elements of $U$ that constitute the subset $A$. The operator $\del(k)$, defined on any finite or infinite ordered set $k$, returns the set of first-order differences between successive elements. That is, for a set
+\[
+k = \{ a_1, a_2, a_3, \dots, a_n \},
+\]
+we define
+\[
+\del(k) = \{ a_2 - a_1,\, a_3 - a_2,\, \dots,\, a_n - a_{n-1} \}.
+\]
+The operator $\max$ denotes the maximum of a set, i.e., the least upper bound of a set.
+
+Furthermore, for any infinite set $K$, we define the function
+\[
+\tau(K) = \sum_{a_i \in K} \frac{1}{a_i},
+\]
+which captures the harmonic weight of the set $K$.
+
+We aim to establish that if $A^\circ \subseteq A$ is an oscillating subset, then the convergence or divergence of $\tau(A)$ is equivalent to that of $\tau(A^\circ)$. In other words,
+\[
+\tau(A) < \infty \iff \tau(A^\circ) < \infty, \quad \text{and} \quad \tau(A) = \infty \iff \tau(A^\circ) = \infty.
+\]
+This result suggests that the oscillatory structure of a subset preserves the asymptotic harmonic behavior of the original set.
+\end{abstract}
+
+\tableofcontents
+
+\input{sections/section-1}
+\input{sections/section-2}
+\input{sections/section-3}
+
+\nocite{*}
+
+\bibliographystyle{plain}
+\bibliography{document}
+
+\end{document}
