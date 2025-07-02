@@ -1,0 +1,36 @@
+\section{Preliminaries}
+
+We define a subset $A^{\circ} \subseteq A$ to be an \emph{oscillating subset} of $A$ if it satisfies the following condition:
+\begin{align}
+\max \left( \del\left( \ind(U, A) \right) \right) < \infty
+\end{align}
+
+Here, the operator $\ind(U, A)$ returns the set of indices in $U$ corresponding to the elements that form the subset $A$. The operator $\del(k)$, defined on any finite or infinite ordered set $k$, returns the set of first-order differences between successive elements. That is, for a set
+\[
+k = \{ a_1, a_2, a_3, \dots, a_n \},
+\]
+we define
+\[
+\del(k) = \{ a_2 - a_1,\, a_3 - a_2,\, \dots,\, a_n - a_{n-1} \}.
+\]
+
+The operator $\max$ denotes the maximum element of a set. When a maximum exists, it is the largest element in the set; otherwise, the supremum may be considered.
+
+\vspace{1em}
+
+For convenience, we define the function $\tau(A)$ for any infinite set $A \subseteq \mathbb{N}$ as the sum of the reciprocals of its elements:
+\begin{align}
+\tau(A) = \sum_{a_i \in A} \frac{1}{a_i}
+\end{align}
+If the subset $A^{\circ} \subseteq A$ is an oscillating subset, then it can be said about the set $A^{\circ}$ has a good density in the set $A$.
+This motivates the question if the convergence and divergence of $\tau(A)$ is related to $\tau(A^{\circ})$?
+
+Hence we state our theorem as,
+\begin{theorem}[Oscillating Set Theorem]
+If $A^{\circ}$ is an oscillating subset of $A$, then 
+\[
+\tau(A) < \infty \iff \tau(A^\circ) < \infty, \quad \text{and} \quad \tau(A) = \infty \iff \tau(A^\circ) = \infty
+\]
+\end{theorem}
+
+This theorem highlights how the oscillating subset preserves the convergence or divergence of the superset.
