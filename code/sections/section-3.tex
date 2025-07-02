@@ -1,0 +1,24 @@
+\section{Results}
+
+Throughout this paper, we introduced and explored the concept of \textbf{Oscillating Subsets}. These subsets possess sufficient structural density within their supersets to preserve the convergence or divergence of the harmonic sum—that is, the sum of reciprocals of the elements of the superset.
+
+We formally defined oscillating subsets as follows:
+
+\begin{result}
+A subset $A^\circ$ is called an oscillating subset of $A$ when $A^\circ \subseteq A$ and
+\[
+\max \left( \del\left( \ind(A, A^\circ) \right) \right) < \infty.
+\]
+Here, the operator $\ind(A, A^\circ)$ returns the set of indices in $A$ corresponding to the elements that form the subset $A^\circ$. The operator $\del(k)$, defined on any finite or infinite ordered set $k$, returns the set of first-order differences between successive elements. The operator $\max$ denotes the maximum of a set; if a maximum does not exist, the supremum is considered instead.
+\end{result}
+
+We then established the following central result:
+
+\begin{result}[Oscillating Set Theorem]
+Let $A$ be an increasing infinite set, and $A^\circ \subseteq A$ an oscillating subset. Then the convergence or divergence of the sum of reciprocals over one of the sets implies the same for the other. That is,
+\[
+\tau(A) < \infty \iff \tau(A^\circ) < \infty \quad \text{and} \quad \tau(A) = \infty \iff \tau(A^\circ) = \infty.
+\]
+\end{result}
+
+This completes our investigation and affirms the fundamental harmonic preservation property of oscillating subsets.
