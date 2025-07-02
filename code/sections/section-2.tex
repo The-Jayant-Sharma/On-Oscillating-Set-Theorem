@@ -1,0 +1,60 @@
+\section{Investigating the Oscillating Set Theorem}
+
+To investigate \emph{Theorem 1}, we begin by proposing the following proposition:
+
+\begin{proposition}
+Let $A$ be an increasing infinite set, and let $A' \subseteq A$ be a subset whose indices within $A$ form an arithmetic progression. Then,
+\[
+\tau(A) < \infty \iff \tau(A') < \infty, \quad \text{and} \quad \tau(A) = \infty \iff \tau(A') = \infty.
+\]
+\end{proposition}
+
+\begin{proof}
+We first consider the case where $\tau(A') = \infty$. Since $A' \subseteq A$, this directly implies $\tau(A) = \infty$.
+
+For the converse, assume $\tau(A) = \infty$ but $\tau(A') < \infty$. Let the indices of elements of $A$ that form $A'$ follow an arithmetic progression with common difference $d \in \mathbb{N}$. Then, we express $A'$ as:
+\[
+A' = \lim_{n \to \infty} \{ a_k,\, a_{k+d},\, a_{k+2d},\, \dots,\, a_{k+(n-1)d} \}.
+\]
+
+Now define, for each $t \in \{1, 2, \dots, d-1\}$, the shifted subsets:
+\[
+A_t = \lim_{n \to \infty} \{ a_{k+t},\, a_{k+t+d},\, a_{k+t+2d},\, \dots,\, a_{k+t+(n-1)d} \}.
+\]
+
+Each $A_t \subseteq A$, and together with $A_0 := A'$, they partition the entire set $A$. That is,
+\[
+A = \bigcup_{t=0}^{d-1} A_t.
+\]
+
+Since $A$ is an increasing sequence of positive integers and $\tau(A_0) = \tau(A') < \infty$ by assumption, and because each $A_t$ has elements strictly larger than those in $A_0$, each corresponding harmonic sum $\tau(A_t)$ must also converge. Thus,
+\[
+\tau(A) = \sum_{t=0}^{d-1} \tau(A_t) < \infty,
+\]
+which contradicts our assumption that $\tau(A) = \infty$. Hence, our assumption must be false, and so $\tau(A') = \infty$.
+
+Similarly, if $\tau(A') < \infty$, then all $\tau(A_t)$ are finite by monotonicity of $A$, and thus $\tau(A) = \sum_{t=0}^{d-1} \tau(A_t) < \infty$.
+
+Finally, the case $\tau(A) < \infty \Rightarrow \tau(A') < \infty$ follows trivially since $A' \subseteq A$.
+
+Thus, all four equivalences are verified, completing the proof.
+\end{proof}
+
+By \emph{Proposition 1}, if $A^\circ$ is an oscillating subset of $A$ with first element $a_p$, then at least one gap between consecutive indices must occur infinitely often due to condition~(1). Based on this, we can construct a subset $P \subseteq A$ defined as:
+\begin{align}
+P = \lim_{n \to \infty} \{ a_p,\, a_{p+d},\, a_{p+2d},\, \dots,\, a_{p+(n-1)d} \}
+\end{align}
+where $d \in \mathbb{N}$, and
+\begin{align}
+d > \max\left( \del\left( \ind(A, P) \right) \right)
+\end{align}
+
+Assume now that $\tau(A^\circ) < \infty$. Since both $P$ and $A^\circ$ start from the same element and, by $(3)$, the growth rate of $\tau(P)$ exceeds that of $\tau(A^\circ)$, it follows that $\tau(P) < \infty$. Furthermore, since $P \subseteq A$ and its indices form an arithmetic progression, \emph{Proposition 1} implies that $\tau(A) < \infty$.
+
+Conversely, assume $\tau(A) < \infty$. Then, as $A^\circ \subseteq A$, it directly follows that $\tau(A^\circ) < \infty$.
+
+Now consider the case where $\tau(A) = \infty$. Then, by \emph{Proposition 1}, we must have $\tau(P) = \infty$. Since $\tau(P)$ grows faster than $\tau(A^\circ)$, it follows that $\tau(A^\circ) = \infty$.
+
+Finally, if $\tau(A^\circ) = \infty$, then since $A^\circ \subseteq A$, we conclude $\tau(A) = \infty$.
+
+Hence, all four possible cases have been verified, completing the proof of \emph{Theorem 1}.
